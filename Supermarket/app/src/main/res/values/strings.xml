@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Supermarket</string>
+
+    <string name="login">PRIJAVA</string>
+    <string name="registration">REGISTRACIJA</string>
+    <string name="user_name">Korisnicko ime</string>
+    <string name="pass">Lozinka</string>
+
+    <string name="button">Registruj se</string>
+    <string name="button2">Nastavi</string>
+    <string name="forgotPass">Zaboravljana lozinka?</string>
+    <string name="termsOfUse">Uslovi koriscenja</string>
+</resources>
