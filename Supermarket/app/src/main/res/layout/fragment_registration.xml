@@ -24,54 +24,235 @@
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:id="@+id/imageViewPass"
+        android:id="@+id/imageViewSurname"
         android:layout_marginTop="15dp"
-        android:src="@drawable/email"
+        android:src="@drawable/username"
         android:layout_below="@+id/imageViewName"
         android:layout_alignLeft="@+id/imageViewName"
         android:layout_alignStart="@+id/imageViewName" />
 
 
-
-
-
-
-
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:id="@+id/imageView2"
+        android:id="@+id/imageViewEmail"
+        android:src="@drawable/email"
+        android:layout_below="@+id/imageViewSurname"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/imageViewSurname"
+        android:layout_alignStart="@+id/imageViewSurname" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewPassword"
         android:src="@drawable/password"
-        android:layout_below="@+id/imageViewPass"
-        android:layout_marginTop="10dp"
-        android:layout_alignLeft="@+id/imageViewPass"
-        android:layout_alignStart="@+id/imageViewPass" />
+        android:layout_below="@+id/imageViewEmail"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
 
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
         android:layout_height="25dp"
-        android:id="@+id/imageView3"
+        android:id="@+id/imageViewPasswordRetype"
+        android:src="@drawable/password"
+        android:layout_below="@+id/imageViewPassword"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewPhone"
+        android:src="@drawable/phone"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewPasswordRetype"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewCellPhone"
+        android:src="@drawable/phone"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewPhone"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewFax"
+        android:src="@drawable/phone"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewCellPhone"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewStreet"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewFax"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewNumber"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewStreet"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewAppartment"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewNumber"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewFlor"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewAppartment"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewEntrency"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewFlor"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewCity"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewEntrency"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewPostalCode"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewCity"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewBirth"
         android:src="@drawable/birthday"
-        android:layout_below="@+id/imageView2"
-        android:layout_alignLeft="@+id/imageView2"
-        android:layout_alignStart="@+id/imageView2" />
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewPostalCode"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewGender"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewBirth"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <Switch
+        android:theme="@style/SCBSwitch"
+        android:id="@+id/switchLegacy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/imageViewGender"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail"
+        android:layout_marginTop="10dp"
+        android:checked="false"
+
+        />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewFirm"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/switchLegacy"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewPib"
+        android:src="@drawable/home"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewFirm"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
+    <ImageView
+        android:layout_marginTop="10dp"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:id="@+id/imageViewNewsletter"
+        android:src="@drawable/email"
+        android:alpha="0.5"
+        android:layout_below="@+id/imageViewPib"
+        android:layout_alignLeft="@+id/imageViewEmail"
+        android:layout_alignStart="@+id/imageViewEmail" />
+
 <RelativeLayout
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_below="@id/imageViewNewsletter"
+    >
     <Button
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="55dp"
         android:text="@string/button2"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:id="@+id/buttonContinue"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="57dp"
+        android:layout_marginBottom="20dp"
         android:background="@color/yellow"
+        android:layout_centerHorizontal="true" />
 
-        />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -80,11 +261,11 @@
         android:textColor="@color/textColor"
         android:alpha="0.5"
         android:id="@+id/textViewCondition"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="25dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@id/buttonContinue"
-        />
+        android:layout_marginBottom="15dp"
+        android:layout_below="@+id/buttonContinue"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>
+
+
 </RelativeLayout>
  </ScrollView>

@@ -15,11 +15,34 @@
         android:alpha="0.9"
         android:id="@+id/relativeLayout">
    <ImageView
+       android:id="@+id/imageViewSupermarket"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_centerInParent="true"
     android:src="@drawable/logo_white"
     />
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:id="@+id/imageViewPicture"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true"
+            android:visibility="gone"
+            />
+
+        <ImageView
+            android:src="@drawable/add"
+            android:layout_width="26.5dp"
+            android:layout_height="25.5dp"
+            android:layout_marginTop="28.5dp"
+            android:layout_marginRight="15dp"
+            android:id="@+id/imageViewAdd"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:visibility="gone"
+            />
 
     </RelativeLayout>
     <android.support.design.widget.TabLayout
