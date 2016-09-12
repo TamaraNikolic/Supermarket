@@ -1,6 +1,7 @@
 
 package supermarket.main.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -14,12 +15,14 @@ import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Switch;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.regex.Pattern;
 
 import supermarket.main.R;
 import supermarket.main.activity.LoginActivity;
+import supermarket.main.activity.TermOfUseActivity;
 import supermarket.main.data.User;
 
 /**
@@ -52,6 +55,7 @@ public class RegistrationFragment extends Fragment{
     private User user;
     private ImageView mIvFirm;
     private ImageView mIvPib;
+    private TextView termOfUse;
 
 
     @Nullable
@@ -86,6 +90,15 @@ public class RegistrationFragment extends Fragment{
         switchLegacy=(Switch)view.findViewById(R.id.switchLegacy);
 
         buutonContiune=(Button)view.findViewById(R.id.buttonContinue);
+
+        termOfUse=(TextView)view.findViewById(R.id.textViewCondition);
+
+        termOfUse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), TermOfUseActivity.class));
+            }
+        });
 
         switchLegacy.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
