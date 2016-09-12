@@ -20,7 +20,17 @@
         android:layout_marginTop="15dp"
         />
 
-
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ime"
+        android:id="@+id/textViewUser"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_alignTop="@+id/imageViewName"
+        android:layout_alignLeft="@+id/textViewEmail"
+        android:layout_alignStart="@+id/textViewEmail" />
     <ImageView
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -30,7 +40,17 @@
         android:layout_below="@+id/imageViewName"
         android:layout_alignLeft="@+id/imageViewName"
         android:layout_alignStart="@+id/imageViewName" />
-
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Prezime"
+        android:id="@+id/textViewSurname"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/textViewUser"
+        android:layout_alignLeft="@+id/textViewUser"
+        android:layout_alignStart="@+id/textViewUser" />
 
     <ImageView
         android:layout_width="25dp"
@@ -42,6 +62,17 @@
         android:layout_alignLeft="@+id/imageViewSurname"
         android:layout_alignStart="@+id/imageViewSurname" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Email"
+        android:id="@+id/textViewEmail"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/imageViewSurname"
+        android:layout_alignLeft="@+id/textViewLozinka"
+        android:layout_alignStart="@+id/textViewLozinka" />
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -51,7 +82,18 @@
         android:layout_below="@+id/imageViewEmail"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
-
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Lozinka"
+        android:id="@+id/textViewLozinka"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_above="@+id/imageViewPasswordRetype"
+        android:layout_alignLeft="@+id/textViewPonovljenaLozinka"
+        android:layout_alignStart="@+id/textViewPonovljenaLozinka" />
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -61,7 +103,18 @@
         android:layout_below="@+id/imageViewPassword"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
-
+    <EditText
+        android:inputType="textPassword"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ponovljena lozinka"
+        android:id="@+id/textViewPonovljenaLozinka"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/textViewLozinka"
+        android:layout_alignLeft="@+id/textViewNumber"
+        android:layout_alignStart="@+id/textViewNumber" />
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -72,6 +125,20 @@
         android:layout_below="@+id/imageViewPasswordRetype"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Telefon"
+        android:id="@+id/textViewPhone"
+        android:inputType="phone"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/imageViewPasswordRetype"
+        android:layout_alignLeft="@+id/textViewCellPhone"
+        android:layout_alignStart="@+id/textViewCellPhone" />
+
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -82,6 +149,20 @@
         android:layout_below="@+id/imageViewPhone"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Cell Telefon"
+        android:id="@+id/textViewCellPhone"
+        android:inputType="phone"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/imageViewPhone"
+        android:layout_alignLeft="@+id/textViewStreet"
+        android:layout_alignStart="@+id/textViewStreet" />
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -93,6 +174,19 @@
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Fax"
+        android:inputType="phone"
+        android:id="@+id/textViewFax"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/imageViewCellPhone"
+        android:layout_alignLeft="@+id/textViewCellPhone"
+        android:layout_alignStart="@+id/textViewCellPhone" />
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -103,6 +197,18 @@
         android:layout_below="@+id/imageViewFax"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ulica"
+        android:id="@+id/textViewStreet"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/imageViewFax"
+        android:layout_alignRight="@+id/textViewAppartment"
+        android:layout_alignEnd="@+id/textViewAppartment" />
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -114,16 +220,45 @@
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
 
+    <EditText
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Broj"
+        android:id="@+id/textViewNumber"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:inputType="number"
+        android:layout_below="@+id/imageViewStreet"
+        android:layout_toRightOf="@+id/imageViewNumber"
+        android:layout_toEndOf="@+id/imageViewNumber"
+      />
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
         android:layout_height="25dp"
         android:id="@+id/imageViewAppartment"
+        android:textColor="@color/textColor"
         android:src="@drawable/home"
         android:alpha="0.5"
         android:layout_below="@+id/imageViewNumber"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Stan"
+        android:id="@+id/textViewAppartment"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/textViewNumber"
+        android:layout_alignLeft="@+id/textViewNumber"
+        android:layout_alignStart="@+id/textViewNumber" />
 
     <ImageView
         android:layout_marginTop="10dp"
@@ -135,6 +270,21 @@
         android:layout_below="@+id/imageViewAppartment"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Sprat"
+        android:id="@+id/textViewFlor"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:inputType="number"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/imageViewAppartment"
+        android:layout_alignLeft="@+id/textViewEntrency"
+        android:layout_alignStart="@+id/textViewEntrency" />
+
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -146,6 +296,19 @@
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Ulaz"
+        android:id="@+id/textViewEntrency"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:textColor="@color/textColor"
+        android:layout_below="@+id/textViewFlor"
+        android:layout_alignLeft="@+id/textViewCity"
+        android:layout_alignStart="@+id/textViewCity" />
+
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -156,6 +319,21 @@
         android:layout_below="@+id/imageViewEntrency"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Grad"
+        android:id="@+id/textViewCity"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:layout_alignBottom="@+id/imageViewCity"
+        android:layout_alignLeft="@+id/textViewPostalCode"
+        android:layout_alignStart="@+id/textViewPostalCode" />
+
+
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -165,7 +343,21 @@
         android:alpha="0.5"
         android:layout_below="@+id/imageViewCity"
         android:layout_alignLeft="@+id/imageViewEmail"
-        android:layout_alignStart="@+id/imageViewEmail" />
+        android:layout_alignStart="@+id/imageViewEmail"    />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Postanski broj"
+        android:id="@+id/textViewPostalCode"
+        android:textColorHint="@color/textColor"
+        android:textColor="@color/textColor"
+        android:textSize="14dp"
+        android:inputType="number"
+        android:layout_below="@+id/textViewCity"
+        android:layout_alignLeft="@+id/textViewAppartment"
+        android:layout_alignStart="@+id/textViewAppartment" />
+
 
     <ImageView
         android:layout_marginTop="10dp"
@@ -177,6 +369,20 @@
         android:layout_below="@+id/imageViewPostalCode"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Datum rodjenja"
+        android:id="@+id/textViewBirthday"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:inputType="date"
+        android:textSize="14dp"
+        android:layout_below="@+id/textViewPostalCode"
+        android:layout_alignLeft="@+id/checkBox"
+        android:layout_alignStart="@+id/checkBox" />
+
     <ImageView
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
@@ -188,7 +394,21 @@
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
 
+    <EditText
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/textColor"
+        android:hint="Pol"
+        android:id="@+id/textViewGender"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:layout_below="@+id/textViewBirthday"
+        android:layout_alignLeft="@+id/textViewStreet"
+        android:layout_alignStart="@+id/textViewStreet" />
+
     <Switch
+
         android:theme="@style/SCBSwitch"
         android:id="@+id/switchLegacy"
         android:layout_width="wrap_content"
@@ -198,10 +418,13 @@
         android:layout_alignStart="@+id/imageViewEmail"
         android:layout_marginTop="10dp"
         android:checked="false"
-
+        android:text="Pravno lice"
+        android:textColor="@color/textColor"
         />
 
     <ImageView
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -211,7 +434,23 @@
         android:layout_below="@+id/switchLegacy"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+    <EditText
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Firma"
+        android:id="@+id/textViewFirm"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:layout_alignTop="@+id/imageViewFirm"
+        android:layout_alignLeft="@+id/textViewEntrency"
+        android:layout_alignStart="@+id/textViewEntrency" />
+
     <ImageView
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:layout_width="25dp"
         android:layout_height="25dp"
@@ -221,6 +460,20 @@
         android:layout_below="@+id/imageViewFirm"
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
+    <EditText
+        android:visibility="gone"
+        android:layout_marginLeft="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Pib"
+        android:id="@+id/textViewPib"
+        android:textColor="@color/textColor"
+        android:textColorHint="@color/textColor"
+        android:textSize="14dp"
+        android:layout_alignTop="@+id/imageViewPib"
+        android:layout_alignLeft="@+id/textViewEntrency"
+        android:layout_alignStart="@+id/textViewEntrency" />
+
 
     <ImageView
         android:layout_marginTop="10dp"
@@ -233,6 +486,16 @@
         android:layout_alignLeft="@+id/imageViewEmail"
         android:layout_alignStart="@+id/imageViewEmail" />
 
+
+    <CheckBox
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NewsLetter"
+        android:id="@+id/checkBox"
+        android:layout_alignTop="@+id/imageViewNewsletter"
+        android:layout_alignLeft="@+id/textViewAppartment"
+        android:layout_alignStart="@+id/textViewAppartment" />
+
 <RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -243,7 +506,6 @@
         android:layout_marginTop="30dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-
         android:textAllCaps="false"
         android:layout_width="match_parent"
         android:layout_height="55dp"
@@ -265,6 +527,8 @@
         android:layout_below="@+id/buttonContinue"
         android:layout_centerHorizontal="true" />
 </RelativeLayout>
+
+
 
 
 </RelativeLayout>

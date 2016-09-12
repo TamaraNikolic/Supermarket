@@ -1,10 +1,11 @@
-package supermarket.main;
+package supermarket.main.adapter;
 
 import android.support.v4.app.Fragment;
  import android.support.v4.app.FragmentManager;
  import android.support.v4.app.FragmentStatePagerAdapter;
 
-
+import supermarket.main.fragment.LoginFragment;
+import supermarket.main.fragment.RegistrationFragment;
 
 
 public class PagerAdapter extends FragmentStatePagerAdapter {

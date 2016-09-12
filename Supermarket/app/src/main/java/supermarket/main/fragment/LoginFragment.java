@@ -1,4 +1,4 @@
-package supermarket.main;
+package supermarket.main.fragment;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -6,7 +6,10 @@ import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.ImageView;
+
+import supermarket.main.R;
 
 /**
  * Created by cubesschool3 on 9/7/16.
@@ -14,6 +17,8 @@ import android.widget.ImageView;
 public class LoginFragment extends android.support.v4.app.Fragment {
     private ImageView mIvPicture;
     private ImageView mIvAdd;
+    private EditText mEtUsser;
+    private EditText mEtPassword;
 
 
     @Nullable
@@ -21,8 +26,10 @@ public class LoginFragment extends android.support.v4.app.Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_login, container, false);
 
-        mIvAdd=(ImageView)view.findViewById(R.id.imageViewAdd);
-        mIvPicture=(ImageView)view.findViewById(R.id.imageViewPicture);
+
+
+        mEtPassword=(EditText)view.findViewById(R.id.textView2);
+        mEtUsser=(EditText)view.findViewById(R.id.textView);
 
 
         return view;

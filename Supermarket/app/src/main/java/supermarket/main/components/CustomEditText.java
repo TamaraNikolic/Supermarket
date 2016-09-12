@@ -1,4 +1,4 @@
-package supermarket.main;
+package supermarket.main.components;
 
 import android.content.Context;
 import android.widget.EditText;
