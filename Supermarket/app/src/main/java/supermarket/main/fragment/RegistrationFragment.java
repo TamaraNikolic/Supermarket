@@ -21,8 +21,8 @@ import android.widget.Toast;
 import java.util.regex.Pattern;
 
 import supermarket.main.R;
-import supermarket.main.activity.LoginActivity;
-import supermarket.main.activity.TermOfUseActivity;
+import supermarket.main.ui.activity.LoginActivity;
+import supermarket.main.ui.activity.TermOfUseActivity;
 import supermarket.main.data.User;
 
 /**

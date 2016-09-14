@@ -10,4 +10,7 @@
     <string name="button2">Nastavi</string>
     <string name="forgotPass">Zaboravljana lozinka?</string>
     <string name="termsOfUse">Uslovi koriscenja</string>
+
+    <string name="error_message">Doslo je do greske pokusajte ponovo</string>
+
 </resources>

@@ -1,4 +1,4 @@
-package supermarket.main.activity;
+package supermarket.main.ui.activity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -12,6 +12,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,7 +23,7 @@ import jp.wasabeef.glide.transformations.CropCircleTransformation;
 import supermarket.main.adapter.PagerAdapter;
 import supermarket.main.R;
 
-public class LoginActivity extends AppCompatActivity {
+public class LoginActivity extends ActivityMessage {
 
 
     //get Token-uvek se koristi!!!, get CityList, get ReservationList, get Categry, get HomeProductList
@@ -37,11 +39,18 @@ public class LoginActivity extends AppCompatActivity {
     private ImageView mIvPicture;
     private ImageView mIvSupermarket;
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
 
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
+                WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+
+        setContentView(R.layout.activity_login);
         initComponents();
         addListneres();
 

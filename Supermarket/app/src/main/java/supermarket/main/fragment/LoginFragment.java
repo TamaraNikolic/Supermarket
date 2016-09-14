@@ -1,6 +1,5 @@
 package supermarket.main.fragment;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -12,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import supermarket.main.R;
-import supermarket.main.activity.ForgotPassActivity;
+import supermarket.main.ui.activity.ForgotPassActivity;
 
 /**
  * Created by cubesschool3 on 9/7/16.
