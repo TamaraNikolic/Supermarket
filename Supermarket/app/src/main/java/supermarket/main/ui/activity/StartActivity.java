@@ -16,6 +16,7 @@ import com.squareup.otto.Subscribe;
 import supermarket.main.R;
 import supermarket.main.data.Constant;
 import supermarket.main.data.DataContainer;
+import supermarket.main.data.response.ProductResponse;
 import supermarket.main.data.response.ResponseCategory;
 import supermarket.main.data.response.ResponseCity;
 import supermarket.main.data.response.ResponseToken;
@@ -31,6 +32,7 @@ public class StartActivity extends ActivityMessage {
     private GsonRequest<ResponseToken> mRequestToken;
     private GsonRequest<ResponseCategory>mResponceCategory;
     private GsonRequest<ResponseCity>mRequestCity;
+    private GsonRequest<ProductResponse>mResponseProduct;
     private int count=0;
 
 
@@ -53,9 +55,11 @@ public class StartActivity extends ActivityMessage {
                 DataContainer.TOKEN=response.data.results.token;
                 count++;
                 startLogin(count);
-                DataLoader.addRequest(getApplicationContext(),mResponceCategory,REQUEST_TAG);
+                DataLoader.addRequest(getApplicationContext(), mResponceCategory, REQUEST_TAG);
                 DataLoader.addRequest(getApplicationContext(),mRequestCity,REQUEST_TAG);
+                DataLoader.addRequest(getApplicationContext(),mResponseProduct,REQUEST_TAG);
 
+                Toast.makeText(getApplicationContext(),DataContainer.TOKEN,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -73,6 +77,21 @@ public class StartActivity extends ActivityMessage {
                         count++;
                         startLogin(count);
 }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+
+            }
+        });
+
+        mResponseProduct=new GsonRequest<ProductResponse>(Constant.PRODUCT_URL + "?token=" + DataContainer.TOKEN, Request.Method.GET, ProductResponse.class,
+                new Response.Listener<ProductResponse>() {
+                    @Override
+                    public void onResponse(ProductResponse response) {
+                        DataContainer.products=response.data.results;
+                        count++;
+                        startLogin(count);
+                    }
                 }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
@@ -99,6 +118,8 @@ public class StartActivity extends ActivityMessage {
         DataLoader.addRequest(getApplicationContext(),mRequestToken,REQUEST_TAG);
     }
 
+
+
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -106,7 +127,7 @@ public class StartActivity extends ActivityMessage {
     }
 
     private synchronized void startLogin(int num){
-        if(num==3){
+        if(num==4){
             startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             finish();
         }

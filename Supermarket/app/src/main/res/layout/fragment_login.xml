@@ -4,8 +4,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-<RelativeLayout android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:background="@drawable/bg"
     >
@@ -67,32 +67,33 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_marginBottom="157dp">
-        <Button
-            android:layout_marginTop="30dp"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-            android:textAllCaps="false"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:text="@string/button2"
-            android:id="@+id/buttonContinue"
-            android:layout_marginBottom="20dp"
-            android:background="@color/yellow"
-            android:layout_centerHorizontal="true" />
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/forgotPass"
-            android:textSize="13dp"
-            android:textColor="@color/textColor"
-            android:alpha="0.5"
-            android:id="@+id/textView3"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="25dp"
-            android:layout_centerHorizontal="true"
-            />
 
     </RelativeLayout>
+
+    <Button
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@string/button2"
+        android:id="@+id/buttonContinue"
+        android:background="@color/yellow"
+        android:layout_below="@+id/textView2"
+        android:layout_alignLeft="@+id/imageViewPass"
+        android:layout_alignStart="@+id/imageViewPass"
+        android:layout_marginTop="178dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgotPass"
+        android:textSize="13dp"
+        android:textColor="@color/textColor"
+        android:alpha="0.5"
+        android:id="@+id/textView3"
+        android:layout_marginTop="36dp"
+        android:layout_below="@+id/buttonContinue"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2" />
 </RelativeLayout>
 </ScrollView>
 
