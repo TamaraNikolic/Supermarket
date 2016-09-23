@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="supermarket.main.ui.activity.AddressConfirmActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="83.5dp"
+        android:background="@drawable/overlay"
+        android:alpha="0.9"
+        android:id="@+id/relativeLayoutSupermarket">
+        <supermarket.main.components.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/addressconfirmation"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="22.7dp"
+            android:layout_alignTop="@+id/imageViewBack"
+            android:layout_toRightOf="@+id/imageViewBack"
+            android:layout_toEndOf="@+id/imageViewBack"
+            android:layout_marginLeft="10dp"
+            android:layout_marginStart="10dp" />
+
+        <ImageView
+            android:layout_width="33.3dp"
+            android:layout_height="33.3dp"
+            android:id="@+id/imageViewBack"
+            android:src="@drawable/back"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"/>
+
+
+    </RelativeLayout>
+
+
+
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@string/addressconfirmation"
+        android:id="@+id/buttonContinue"
+        android:layout_marginBottom="20dp"
+        android:background="@color/yellow"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+

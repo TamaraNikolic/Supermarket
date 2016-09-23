@@ -8,7 +8,7 @@ public class DataProduct {
     public String id;
     public String name;
     public String description;
-    public String image;
+    public String thumb330;
     public String firstprice;
     public String price;
     public String sportlight;

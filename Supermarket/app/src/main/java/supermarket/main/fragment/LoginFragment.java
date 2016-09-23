@@ -24,6 +24,8 @@ import supermarket.main.data.response.ResponseLogin;
 import supermarket.main.networking.DataLoader;
 import supermarket.main.networking.GsonRequest;
 import supermarket.main.ui.activity.ForgotPassActivity;
+import supermarket.main.ui.activity.MainActivity;
+import supermarket.main.ui.activity.StartActivity;
 
 /**
  * Created by cubesschool3 on 9/7/16.
@@ -80,13 +82,33 @@ public class LoginFragment extends android.support.v4.app.Fragment {
         mForgotPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 startActivity(new Intent(getContext(), ForgotPassActivity.class));
 
 
             }
         });
+if(true) {
+
+    mResponceLogin=new GsonRequest<ResponseLogin>("http://shop.cubes.rs/phone-user?email=tamaranikolic13@yahoo.com&password=tamara&token="+ DataContainer.TOKEN, Request.Method.GET, ResponseLogin.class,
+            new Response.Listener<ResponseLogin>() {
+                @Override
+                public void onResponse(ResponseLogin response) {
+                    DataContainer.login_token=response.data.login_token;
+                    Toast.makeText(getActivity().getApplicationContext(),""+response.data.token,Toast.LENGTH_SHORT).show();
+
+                }
+            }, new Response.ErrorListener() {
+        @Override
+        public void onErrorResponse(VolleyError error) {
+            Toast.makeText(getActivity().getApplicationContext(),error.getMessage(),Toast.LENGTH_SHORT).show();
+        }
+    });
+
+    DataLoader.addRequest(getActivity().getApplicationContext(), mResponceLogin, REQUEST_TAG1);
+
+    startActivity(new Intent(getContext(), MainActivity.class));
+    getActivity().finish();
+}
 
 
         return view;

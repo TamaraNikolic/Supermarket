@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/textColor"
+    android:layout_margin="5dp"
+    android:id="@+id/product_root"
+
+    >
+
+    <ImageView
+        android:layout_width="163.3dp"
+        android:layout_height="109.3dp"
+        android:id="@+id/imageViewProduct"
+        android:layout_gravity="center_horizontal" />
+
+    <supermarket.main.components.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewDescription"
+        android:layout_below="@id/imageViewProduct"
+        android:layout_margin="5dp"
+        android:textColor="#000"
+
+        />
+
+    <ImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        android:id="@+id/imageViewBasket"
+        android:layout_below="@+id/textViewDescription"
+        android:layout_alignParentRight="true"
+        android:layout_margin="5dp"
+        android:src="@drawable/add_to_cart"
+      />
+
+    <supermarket.main.components.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="New Text"
+        android:id="@+id/textViewPrice"
+        android:layout_gravity="center_horizontal"
+        android:layout_below="@id/textViewDescription"
+        android:layout_marginLeft="5dp"
+        android:textColor="#000"
+        />
+</RelativeLayout>

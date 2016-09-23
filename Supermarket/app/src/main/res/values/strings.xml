@@ -12,5 +12,7 @@
     <string name="termsOfUse">Uslovi koriscenja</string>
 
     <string name="error_message">Doslo je do greske pokusajte ponovo</string>
+    <string name="basket">Korpa</string>
+    <string name="addressconfirmation">Potvrda adrese</string>
 
 </resources>
