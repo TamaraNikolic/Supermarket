@@ -15,4 +15,9 @@
     <string name="basket">Korpa</string>
     <string name="addressconfirmation">Potvrda adrese</string>
 
+    <string name="profile">Profil</string>
+    <string name="change">Izmeni</string>
+
+    <string name="settings">Podesavanja</string>
+
 </resources>

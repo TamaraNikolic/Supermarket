@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/imageViewUserPicture"
+        />
+
+    <supermarket.main.components.CustomTextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewUserPicture"
+        android:text="user"
+        android:textSize="27dp"
+        android:layout_marginLeft="15dp"
+        />
+
+    <supermarket.main.components.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userEmail"
+        android:layout_below="@id/textViewUserName"
+        android:text="email"
+        android:layout_alignStart="@+id/textViewUserName"
+        android:textSize="19dp"
+
+        />
+
+</RelativeLayout>

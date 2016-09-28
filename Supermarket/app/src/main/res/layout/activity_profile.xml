@@ -1,0 +1,66 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="supermarket.main.ui.activity.AddressConfirmActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="83.5dp"
+        android:background="@drawable/overlay"
+        android:alpha="0.9"
+        android:id="@+id/relativeLayoutSupermarket">
+        <supermarket.main.components.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile"
+            android:textColor="@color/cardview_light_background"
+            android:textSize="22.7dp"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/imageViewHam"
+            android:layout_toEndOf="@+id/imageViewHam"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:id="@+id/imageViewHam"
+            android:src="@drawable/menu"
+            android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:cropToPadding="true"
+            android:id="@+id/imageViewPicture"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:src="@drawable/add"/>
+
+
+    </RelativeLayout>
+
+
+
+
+    <Button
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_alignParentBottom="true"
+        android:textAllCaps="false"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:text="@string/change"
+        android:id="@+id/buttonContinue"
+        android:layout_marginBottom="20dp"
+        android:background="@color/yellow"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
+
+

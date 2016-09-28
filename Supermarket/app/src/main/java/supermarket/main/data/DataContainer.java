@@ -18,7 +18,7 @@ public class DataContainer {
     public static String login_token;
 
 
-    public static ArrayList<DataCategory> categories;
+    public static ArrayList<DataCategory> categories=new ArrayList<>();
     public static DataLogin login;
     public static ArrayList<DataCity>cities;
     public static ArrayList<DataProduct>products;

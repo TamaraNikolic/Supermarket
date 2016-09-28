@@ -23,7 +23,9 @@
         <activity android:name=".ui.activity.ForgotPassActivity" />
         <activity android:name=".ui.activity.TermOfUseActivity" />
         <activity android:name=".ui.activity.BasketAcitivity" />
-        <activity android:name=".ui.activity.AddressConfirmActivity"></activity>
+        <activity android:name=".ui.activity.AddressConfirmActivity" />
+        <activity android:name=".ui.activity.ProfileActivity" />
+        <activity android:name=".ui.activity.SetttingsActivity"></activity>
     </application>
 
 </manifest>

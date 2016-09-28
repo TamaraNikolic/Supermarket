@@ -13,8 +13,11 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.squareup.otto.Subscribe;
 
+import java.util.ArrayList;
+
 import supermarket.main.R;
 import supermarket.main.data.Constant;
+import supermarket.main.data.DataCategory;
 import supermarket.main.data.DataContainer;
 import supermarket.main.data.response.ProductResponse;
 import supermarket.main.data.response.ResponseCategory;
@@ -71,9 +74,25 @@ public class StartActivity extends ActivityMessage {
                 new Response.Listener<ResponseCategory>() {
                     @Override
                     public void onResponse(ResponseCategory response) {
-                        DataContainer.categories=response.data.results;
+                        DataCategory home=new DataCategory();
+                        home.name="Home";
+                        DataContainer.categories.add(home);
+                        home.subcategories=new ArrayList<>();
+                        DataContainer.categories.addAll(response.data.results);
                         count++;
                         startLogin(count);
+                        DataCategory settings=new DataCategory();
+                        settings.name="Settings";
+                        settings.subcategories=new ArrayList<>();
+                        DataContainer.categories.add(settings);
+                        DataCategory profil=new DataCategory();
+                        profil.name="Profile";
+                        profil.subcategories=new ArrayList<>();
+                        DataContainer.categories.add(profil);
+                        DataCategory signout=new DataCategory();
+                        signout.name="Sign Out";
+                        signout.subcategories=new ArrayList<>();
+                        DataContainer.categories.add(signout);
 }
                 }, new Response.ErrorListener() {
             @Override

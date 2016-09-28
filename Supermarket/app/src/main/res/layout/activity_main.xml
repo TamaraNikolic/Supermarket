@@ -63,11 +63,65 @@
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nvView"
-        android:layout_width="wrap_content"
+        android:layout_width="320dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@android:color/white"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<RelativeLayout
+    android:layout_marginBottom="20dp"
+    android:layout_marginTop="40dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/profil"
+    >
+    <ImageView
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:layout_alignParentLeft="true"
+        android:id="@+id/imageViewUserPicture"
         />
+
+    <supermarket.main.components.CustomTextView
+        android:id="@+id/textViewUserName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/imageViewUserPicture"
+        android:text="user"
+        android:textSize="27sp"
+        android:layout_marginLeft="15dp"
+        />
+
+    <supermarket.main.components.CustomTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/userEmail"
+        android:layout_below="@id/textViewUserName"
+        android:text="email"
+        android:layout_alignStart="@+id/textViewUserName"
+        android:textSize="18sp"
+
+        />
+</RelativeLayout>
+        <ExpandableListView
+            android:layout_below="@id/profil"
+            android:id="@+id/extendibleListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:groupIndicator="@null"
+            android:dividerHeight="0dp"
+            android:divider="@null"
+            />
+        </RelativeLayout>
+
+    </android.support.design.widget.NavigationView>
+
+
+
+
 
 
 
