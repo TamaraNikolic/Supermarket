@@ -60,7 +60,6 @@ public class StartActivity extends ActivityMessage {
                 DataLoader.addRequest(getApplicationContext(),mRequestCity,REQUEST_TAG);
                 DataLoader.addRequest(getApplicationContext(),mResponseProduct,REQUEST_TAG);
 
-                Toast.makeText(getApplicationContext(),DataContainer.TOKEN,Toast.LENGTH_SHORT).show();
             }
         }, new Response.ErrorListener() {
             @Override
@@ -74,25 +73,11 @@ public class StartActivity extends ActivityMessage {
                 new Response.Listener<ResponseCategory>() {
                     @Override
                     public void onResponse(ResponseCategory response) {
-                        DataCategory home=new DataCategory();
-                        home.name="Home";
-                        DataContainer.categories.add(home);
-                        home.subcategories=new ArrayList<>();
+
                         DataContainer.categories.addAll(response.data.results);
                         count++;
                         startLogin(count);
-                        DataCategory settings=new DataCategory();
-                        settings.name="Settings";
-                        settings.subcategories=new ArrayList<>();
-                        DataContainer.categories.add(settings);
-                        DataCategory profil=new DataCategory();
-                        profil.name="Profile";
-                        profil.subcategories=new ArrayList<>();
-                        DataContainer.categories.add(profil);
-                        DataCategory signout=new DataCategory();
-                        signout.name="Sign Out";
-                        signout.subcategories=new ArrayList<>();
-                        DataContainer.categories.add(signout);
+
 }
                 }, new Response.ErrorListener() {
             @Override

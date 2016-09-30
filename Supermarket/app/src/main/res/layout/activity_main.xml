@@ -49,6 +49,45 @@
           />
 
     </RelativeLayout>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:visibility="gone"
+    android:id="@+id/progressBarLoading"
+    >
+    <ProgressBar
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true"
+
+        />
+
+</RelativeLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:id="@+id/relativeLayoutWarning"
+        android:visibility="gone"
+        >
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/imageWarning"
+            android:src="@drawable/warning"
+            android:layout_marginBottom="10dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nema sadrzaja"
+            android:textSize="18dp"
+            android:layout_below="@id/imageWarning"
+            android:textColor="#60ffffff"
+            />
+    </RelativeLayout>
 
 
     <android.support.v7.widget.RecyclerView
@@ -83,6 +122,7 @@
         android:layout_height="65dp"
         android:layout_alignParentLeft="true"
         android:id="@+id/imageViewUserPicture"
+
         />
 
     <supermarket.main.components.CustomTextView
