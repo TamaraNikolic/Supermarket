@@ -38,6 +38,8 @@ public class LoginFragment extends android.support.v4.app.Fragment {
     private Button mButtonLogin;
 
 
+
+
     private GsonRequest<ResponseLogin> mResponceLogin;
     private final String REQUEST_TAG1="Login_activity";
 

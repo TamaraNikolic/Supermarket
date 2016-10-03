@@ -19,5 +19,8 @@
     <string name="change">Izmeni</string>
 
     <string name="settings">Podesavanja</string>
+    <string name="notifications">Notifikacije</string>
+    <string name="signout">Odjavi se</string>
+    <string name="support">Podrska</string>
 
 </resources>

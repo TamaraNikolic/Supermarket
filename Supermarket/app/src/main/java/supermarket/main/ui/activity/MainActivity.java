@@ -62,8 +62,8 @@ public class MainActivity extends AppCompatActivity {
 
     private GsonRequest<ProductSearchResponse>mResponseProduct2;
     private GsonRequest<ProductSearchResponse>mResponseProduct3;
-    ArrayList<DataProduct>mProductList=new ArrayList<>();
-    ArrayList<DataCategory>mCategoryList=new ArrayList<>();
+    public static ArrayList<DataProduct>mProductList=new ArrayList<>();
+    public static ArrayList<DataCategory>mCategoryList=new ArrayList<>();
 
     ExtendableListAdapter listAdapter;
     ExpandableListView expListView;
@@ -204,12 +204,17 @@ public class MainActivity extends AppCompatActivity {
                 if (i == 0) {
                     mDraverLayout.closeDrawer(GravityCompat.START);
                 } else if (i == mCategoryList.size() - 2) {
-
+                    mDraverLayout.closeDrawer(GravityCompat.START);
                     startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
-                } else if (i == mCategoryList.size() - 3) {
 
+                } else if (i == mCategoryList.size() - 3) {
+                    mDraverLayout.closeDrawer(GravityCompat.START);
                     startActivity(new Intent(getApplicationContext(), SetttingsActivity.class));
-                } else {
+                }  else if (i == mCategoryList.size() - 1) {
+                    mDraverLayout.closeDrawer(GravityCompat.START);
+
+                }
+                else {
                     if (mCategoryList.get(i).subcategories.size() == 0) {
                         mDraverLayout.closeDrawer(GravityCompat.START);
                         mProductList.clear();
@@ -229,7 +234,8 @@ public class MainActivity extends AppCompatActivity {
                                             mRelLayWarning.setVisibility(View.GONE);
                                         }
                                     }
-                                }, new Response.ErrorListener() {
+                                },
+                                 new Response.ErrorListener() {
                             @Override
                             public void onErrorResponse(VolleyError error) {
                                 Toast.makeText(getApplicationContext(), "greska", Toast.LENGTH_SHORT).show();

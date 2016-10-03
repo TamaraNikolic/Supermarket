@@ -1,10 +1,17 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg"
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<android.support.v4.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/my_drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="supermarket.main.ui.activity.AddressConfirmActivity">
-
+    android:fitsSystemWindows="true"
+   >
+<RelativeLayout
+    android:background="@drawable/bg"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="83.5dp"
@@ -32,15 +39,198 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
 
+    </RelativeLayout>
 
 
+    <RelativeLayout
+        android:id="@+id/relativeLayoutSettings"
+        android:layout_below="@id/relativeLayoutSupermarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        >
+        <RelativeLayout
+            android:id="@+id/rl1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <supermarket.main.components.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/notifications"
+                android:textColor="@color/textColor"
+                android:layout_marginTop="30dp"
+                android:id="@+id/textViewNotifications"
+                android:layout_alignParentLeft="true"
+                />
+
+            <Switch
+                android:layout_marginTop="30dp"
+                android:theme="@style/SCBSwitch"
+                android:id="@+id/switcher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="false"
+                android:textColor="@color/textColor"
+                android:layout_alignParentRight="true"
+
+                />
+        </RelativeLayout>
+     <RelativeLayout
+         android:layout_marginTop="30dp"
+         android:layout_below="@id/rl1"
+         android:id="@+id/rl2"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content">
+         <supermarket.main.components.CustomTextView
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="@string/termsOfUse"
+             android:textColor="@color/textColor"
+             android:id="@+id/textViewTermOfUSe"
+             android:layout_alignParentLeft="true"
+             />
+         <ImageView
+             android:id="@+id/imageViewTermOFUSe"
+             android:layout_width="35dp"
+             android:layout_height="35dp"
+             android:src="@drawable/next"
+             android:layout_alignTop="@+id/textViewTermOfUSe"
+            android:layout_alignParentRight="true" />
+
+     </RelativeLayout>
+      <RelativeLayout
+          android:layout_marginTop="30dp"
+          android:id="@+id/rl3"
+          android:layout_below="@+id/rl2"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content">
+          <supermarket.main.components.CustomTextView
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/profile"
+              android:textColor="@color/textColor"
+              android:id="@+id/textViewProfile"
+              android:layout_alignParentLeft="true"
+              />
+          <ImageView
+              android:id="@+id/imageViewProfile"
+              android:layout_width="35dp"
+              android:layout_height="35dp"
+              android:src="@drawable/next"
+              android:layout_alignParentRight="true" />
+      </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/rl4"
+        android:layout_below="@id/rl3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        >
+
+        <supermarket.main.components.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/signout"
+            android:textColor="@color/textColor"
+            android:id="@+id/textViewSignOut"
+            android:layout_alignParentLeft="true"
+            />
+
+        <ImageView
+            android:id="@+id/imageViewSignOut"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:src="@drawable/next"
+            android:layout_alignParentRight="true" />
+    </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="30dp"
+            android:id="@+id/rl5"
+            android:layout_below="@id/rl4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+        <supermarket.main.components.CustomTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/support"
+            android:textColor="@color/textColor"
+            android:id="@+id/textViewSupport"
+            android:layout_alignParentLeft="true"
+            />
+            <ImageView
+                android:id="@+id/imageViewSupport"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:src="@drawable/next"
+                android:layout_alignParentRight="true" />
 
     </RelativeLayout>
 
 
 
-
-
 </RelativeLayout>
+</RelativeLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/nvView"
+        android:layout_width="320dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        android:background="@android:color/white">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/profil"
+            >
+            <ImageView
+                android:layout_width="65dp"
+                android:layout_height="65dp"
+                android:layout_alignParentLeft="true"
+                android:id="@+id/imageViewUserPicture"
+
+                />
+
+            <supermarket.main.components.CustomTextView
+                android:id="@+id/textViewUserName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/imageViewUserPicture"
+                android:text="user"
+                android:textSize="27sp"
+                android:layout_marginLeft="15dp"
+                android:textColor="#000"
+                />
+
+            <supermarket.main.components.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/userEmail"
+                android:layout_below="@id/textViewUserName"
+                android:text="email"
+                android:layout_alignStart="@+id/textViewUserName"
+                android:textSize="18sp"
+                android:textColor="#000"
+
+                />
+        </RelativeLayout>
+        <ExpandableListView
+            android:layout_below="@id/profil"
+            android:id="@+id/extendibleListView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:groupIndicator="@null"
+            android:dividerHeight="0dp"
+            android:divider="@null"
+            android:textColor="#000"
+            />
+    </RelativeLayout>
+    </android.support.design.widget.NavigationView>
+</android.support.v4.widget.DrawerLayout>
 

@@ -1,66 +1,608 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:background="@drawable/bg"
+<?xml version="1.0" encoding="utf-8"?>
+
+
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:orientation="vertical" android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/bg"
+        >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="83.5dp"
+            android:background="@drawable/overlay"
+            android:alpha="0.9"
+            android:id="@+id/relativeLayoutSupermarket">
+            <ImageView
+                android:id="@+id/imageViewSupermarket"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:src="@drawable/logo_white"
+                />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/imageViewHam"
+                android:src="@drawable/menu"
+                android:layout_alignBottom="@+id/imageViewSupermarket"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <ImageView
+                android:src="@drawable/add"
+                android:layout_width="26.5dp"
+                android:layout_height="25.5dp"
+                android:layout_marginTop="28.5dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imageViewAd"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                />
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:alpha="0.9"
+            android:id="@+id/relativeLayout"
+            android:layout_below="@id/relativeLayoutSupermarket"
+            >
+
+            <ImageView
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageViewPicture"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                />
+
+            <ImageView
+                android:src="@drawable/add"
+                android:layout_width="26.5dp"
+                android:layout_height="25.5dp"
+                android:layout_marginTop="28.5dp"
+                android:layout_marginRight="15dp"
+                android:id="@+id/imageViewAdd"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:visibility="gone"
+                />
+
+        </RelativeLayout>
+    <ScrollView
+        android:layout_below="@id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+<RelativeLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="supermarket.main.ui.activity.AddressConfirmActivity">
+    android:layout_marginTop="10dp"
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="83.5dp"
-        android:background="@drawable/overlay"
-        android:alpha="0.9"
-        android:id="@+id/relativeLayoutSupermarket">
-        <supermarket.main.components.CustomTextView
+    >
+
+        <ImageView
+            android:layout_width="25dp"
+            android:src="@drawable/username"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewName"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            />
+
+        <supermarket.main.components.CustomEditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/profile"
-            android:textColor="@color/cardview_light_background"
-            android:textSize="22.7dp"
-            android:layout_centerVertical="true"
-            android:layout_toRightOf="@+id/imageViewHam"
-            android:layout_toEndOf="@+id/imageViewHam"
-            android:layout_marginLeft="20dp"
-            android:layout_marginStart="20dp" />
+            android:hint="Ime"
+            android:id="@+id/textViewUser"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_alignTop="@+id/imageViewName"
+            android:layout_alignLeft="@+id/textViewEmail"
+            android:layout_alignStart="@+id/textViewEmail" />
+        <ImageView
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewSurname"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/username"
+            android:layout_below="@+id/imageViewName"
+            android:layout_alignLeft="@+id/imageViewName"
+            android:layout_alignStart="@+id/imageViewName" />
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Prezime"
+            android:id="@+id/textViewSurname"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/textViewUser"
+            android:layout_alignLeft="@+id/textViewUser"
+            android:layout_alignStart="@+id/textViewUser" />
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:id="@+id/imageViewHam"
-            android:src="@drawable/menu"
-            android:layout_centerVertical="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewEmail"
+            android:src="@drawable/email"
+            android:layout_below="@+id/imageViewSurname"
+            android:layout_marginTop="10dp"
+            android:layout_alignLeft="@+id/imageViewSurname"
+            android:layout_alignStart="@+id/imageViewSurname" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Email"
+            android:id="@+id/textViewEmail"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/imageViewSurname"
+            android:layout_alignLeft="@+id/textViewLozinka"
+            android:layout_alignStart="@+id/textViewLozinka" />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewPassword"
+            android:src="@drawable/password"
+            android:layout_below="@+id/imageViewEmail"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+        <supermarket.main.components.CustomEditText
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Lozinka"
+            android:id="@+id/textViewLozinka"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_above="@+id/imageViewPasswordRetype"
+            android:layout_alignLeft="@+id/textViewPonovljenaLozinka"
+            android:layout_alignStart="@+id/textViewPonovljenaLozinka" />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewPasswordRetype"
+            android:src="@drawable/password"
+            android:layout_below="@+id/imageViewPassword"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+        <supermarket.main.components.CustomEditText
+            android:inputType="textPassword"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ponovljena lozinka"
+            android:id="@+id/textViewPonovljenaLozinka"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/textViewLozinka"
+            android:layout_alignLeft="@+id/textViewNumber"
+            android:layout_alignStart="@+id/textViewNumber" />
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewPhone"
+            android:src="@drawable/phone"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewPasswordRetype"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Telefon"
+            android:id="@+id/textViewPhone"
+            android:inputType="phone"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/imageViewPasswordRetype"
+            android:layout_alignLeft="@+id/textViewCellPhone"
+            android:layout_alignStart="@+id/textViewCellPhone" />
+
 
         <ImageView
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:cropToPadding="true"
-            android:id="@+id/imageViewPicture"
-            android:layout_centerVertical="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:src="@drawable/add"/>
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewCellPhone"
+            android:src="@drawable/phone"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewPhone"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Mobilni Telefon"
+            android:id="@+id/textViewCellPhone"
+            android:inputType="phone"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/imageViewPhone"
+            android:layout_alignLeft="@+id/textViewStreet"
+            android:layout_alignStart="@+id/textViewStreet" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewFax"
+            android:src="@drawable/phone"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewCellPhone"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Fax"
+            android:inputType="phone"
+            android:id="@+id/textViewFax"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/imageViewCellPhone"
+            android:layout_alignLeft="@+id/textViewCellPhone"
+            android:layout_alignStart="@+id/textViewCellPhone" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewStreet"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewFax"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ulica"
+            android:id="@+id/textViewStreet"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/imageViewFax"
+            android:layout_alignRight="@+id/textViewAppartment"
+            android:layout_alignEnd="@+id/textViewAppartment" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewNumber"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewStreet"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_marginLeft="15dp"
+            android:layout_marginStart="15dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Broj"
+            android:id="@+id/textViewNumber"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:inputType="number"
+            android:layout_below="@+id/imageViewStreet"
+            android:layout_toRightOf="@+id/imageViewNumber"
+            android:layout_toEndOf="@+id/imageViewNumber"
+            />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewAppartment"
+            android:textColor="@color/textColor"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewNumber"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Stan"
+            android:id="@+id/textViewAppartment"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/textViewNumber"
+            android:layout_alignLeft="@+id/textViewNumber"
+            android:layout_alignStart="@+id/textViewNumber" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewFlor"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewAppartment"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Sprat"
+            android:id="@+id/textViewFlor"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:inputType="number"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/imageViewAppartment"
+            android:layout_alignLeft="@+id/textViewEntrency"
+            android:layout_alignStart="@+id/textViewEntrency" />
 
 
-    </RelativeLayout>
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewEntrency"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewFlor"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText   android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Ulaz"
+            android:id="@+id/textViewEntrency"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:textColor="@color/textColor"
+            android:layout_below="@+id/textViewFlor"
+            android:layout_alignLeft="@+id/textViewCity"
+            android:layout_alignStart="@+id/textViewCity" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewCity"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewEntrency"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Grad"
+            android:id="@+id/textViewCity"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:layout_alignBottom="@+id/imageViewCity"
+            android:layout_alignLeft="@+id/textViewPostalCode"
+            android:layout_alignStart="@+id/textViewPostalCode" />
 
 
 
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewPostalCode"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewCity"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail"    />
 
-    <Button
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:layout_alignParentBottom="true"
-        android:textAllCaps="false"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:text="@string/change"
-        android:id="@+id/buttonContinue"
-        android:layout_marginBottom="20dp"
-        android:background="@color/yellow"
-        android:layout_centerHorizontal="true" />
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Postanski broj"
+            android:id="@+id/textViewPostalCode"
+            android:textColorHint="@color/textColor"
+            android:textColor="@color/textColor"
+            android:textSize="14dp"
+            android:inputType="number"
+            android:layout_below="@+id/textViewCity"
+            android:layout_alignLeft="@+id/textViewAppartment"
+            android:layout_alignStart="@+id/textViewAppartment" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewBirth"
+            android:src="@drawable/birthday"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewPostalCode"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Datum rodjenja"
+            android:id="@+id/textViewBirthday"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:inputType="date"
+            android:textSize="14dp"
+            android:layout_below="@+id/textViewPostalCode"
+            android:layout_alignLeft="@+id/checkBox"
+            android:layout_alignStart="@+id/checkBox" />
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewGender"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewBirth"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+        <supermarket.main.components.CustomEditText
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/textColor"
+            android:hint="Pol"
+            android:id="@+id/textViewGender"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:layout_below="@+id/textViewBirthday"
+            android:layout_alignLeft="@+id/textViewStreet"
+            android:layout_alignStart="@+id/textViewStreet" />
+
+        <Switch
+
+            android:theme="@style/SCBSwitch"
+            android:id="@+id/switchLegacy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageViewGender"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail"
+            android:layout_marginTop="10dp"
+            android:checked="false"
+            android:text="Pravno lice"
+            android:textColor="@color/textColor"
+            />
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewFirm"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/switchLegacy"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+        <supermarket.main.components.CustomEditText
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Firma"
+            android:id="@+id/textViewFirm"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:layout_alignTop="@+id/imageViewFirm"
+            android:layout_alignLeft="@+id/textViewEntrency"
+            android:layout_alignStart="@+id/textViewEntrency" />
+
+        <ImageView
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewPib"
+            android:src="@drawable/home"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewFirm"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+        <supermarket.main.components.CustomEditText
+            android:visibility="gone"
+            android:layout_marginLeft="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Pib"
+            android:id="@+id/textViewPib"
+            android:textColor="@color/textColor"
+            android:textColorHint="@color/textColor"
+            android:textSize="14dp"
+            android:layout_alignTop="@+id/imageViewPib"
+            android:layout_alignLeft="@+id/textViewEntrency"
+            android:layout_alignStart="@+id/textViewEntrency" />
+
+
+        <ImageView
+            android:layout_marginTop="10dp"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageViewNewsletter"
+            android:src="@drawable/email"
+            android:alpha="0.5"
+            android:layout_below="@+id/imageViewPib"
+            android:layout_alignLeft="@+id/imageViewEmail"
+            android:layout_alignStart="@+id/imageViewEmail" />
+
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NewsLetter"
+            android:textColor="@color/textColor"
+            android:id="@+id/checkBox"
+            android:layout_alignTop="@+id/imageViewNewsletter"
+            android:layout_alignLeft="@+id/textViewAppartment"
+            android:layout_alignStart="@+id/textViewAppartment" />
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_below="@id/imageViewNewsletter"
+            >
+            <Button
+                android:layout_marginTop="30dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textAllCaps="false"
+                android:layout_width="match_parent"
+                android:layout_height="55dp"
+                android:text="@string/change"
+                android:id="@+id/buttonContinue"
+                android:layout_marginBottom="20dp"
+                android:background="@color/yellow"
+                android:layout_centerHorizontal="true" />
+
+            <supermarket.main.components.CustomTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/termsOfUse"
+                android:textSize="13dp"
+                android:textColor="@color/textColor"
+                android:alpha="0.5"
+                android:id="@+id/textViewCondition"
+                android:layout_marginBottom="15dp"
+                android:layout_below="@+id/buttonContinue"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+
 </RelativeLayout>
-
-
+    </ScrollView>
+    </RelativeLayout>
