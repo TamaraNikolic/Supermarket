@@ -62,7 +62,7 @@ public class LoginFragment extends android.support.v4.app.Fragment {
 
 
 
-                mResponceLogin=new GsonRequest<ResponseLogin>("http://shop.cubes.rs/phone-user?email=tamaranikolic13@yahoo.com&password=tamara&token="+ DataContainer.TOKEN, Request.Method.GET, ResponseLogin.class,
+                mResponceLogin=new GsonRequest<ResponseLogin>("http://shop.cubes.rs/phone-user?email="+mEtUsser.getText().toString()+"&password="+mEtPassword.getText().toString()+"&token="+ DataContainer.TOKEN, Request.Method.GET, ResponseLogin.class,
                         new Response.Listener<ResponseLogin>() {
                             @Override
                             public void onResponse(ResponseLogin response) {

@@ -19,7 +19,6 @@ public class CustomEditText extends EditText {
         super(context);
         setBackgroundDrawable(null);
         setSingleLine(true);
-        setCursorVisible(false);
         setTextColor(getResources().getColor(R.color.textColor));
         setHintTextColor(getResources().getColor(R.color.hintColor));
 
@@ -29,7 +28,6 @@ public class CustomEditText extends EditText {
         super(context, attrs);
         setBackgroundDrawable(null);
         setSingleLine(true);
-        setCursorVisible(false);
         setTextColor(getResources().getColor(R.color.textColor));
         setHintTextColor(getResources().getColor(R.color.hintColor));
     }
@@ -38,7 +36,6 @@ public class CustomEditText extends EditText {
         super(context, attrs, defStyleAttr);
         setBackgroundDrawable(null);
         setSingleLine(true);
-        setCursorVisible(false);
         setTextColor(getResources().getColor(R.color.textColor));
         setHintTextColor(getResources().getColor(R.color.hintColor));
 

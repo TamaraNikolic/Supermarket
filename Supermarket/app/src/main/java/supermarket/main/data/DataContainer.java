@@ -22,6 +22,8 @@ public class DataContainer {
     public static DataLogin login;
     public static ArrayList<DataCity>cities;
     public static ArrayList<DataProduct>products;
+    public static ArrayList<DataProduct>searchproducts;
+
 
 
 }

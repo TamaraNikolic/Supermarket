@@ -1,6 +1,8 @@
 package supermarket.main.ui.activity;
 
 import android.content.Intent;
+import android.media.Image;
+import android.os.Handler;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +10,8 @@ import android.os.Bundle;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.AdapterView;
@@ -32,7 +36,9 @@ import supermarket.main.R;
 import supermarket.main.adapter.ExtendableListAdapter;
 import supermarket.main.adapter.MyAdapter;
 import supermarket.main.adapter.OnItemClickListener;
+import supermarket.main.components.CustomEditText;
 import supermarket.main.components.CustomTextView;
+import supermarket.main.components.TextProgressBar;
 import supermarket.main.data.Constant;
 import supermarket.main.data.DataCategory;
 import supermarket.main.data.DataContainer;
@@ -52,13 +58,28 @@ public class MainActivity extends AppCompatActivity {
     private ImageView mIvMenu;
     private ImageView mIvBasket;
     private RelativeLayout mPbLoading;
+    Handler myHandler = new Handler();
+    Runnable myRun;
 
+    int time=1;
+
+    Handler myHandler2 = new Handler();
+    Runnable myRun2;
+
+    private int letterNum=0;
 
     private RelativeLayout mRelLayWarning;
 
     private ImageView mImageViewUSerDrawer;
     private CustomTextView mTextViewUserNameDrawer;
     private CustomTextView mTextViewEmailDrawer;
+
+    private TextProgressBar mProgresSearch;
+
+    private CustomEditText mEtSearch;
+    private ImageView mIvSearch;
+    private RelativeLayout mRlSearch;
+    private ImageView mIvDiskardSearch;
 
     private GsonRequest<ProductSearchResponse>mResponseProduct2;
     private GsonRequest<ProductSearchResponse>mResponseProduct3;
@@ -67,6 +88,8 @@ public class MainActivity extends AppCompatActivity {
 
     ExtendableListAdapter listAdapter;
     ExpandableListView expListView;
+
+    private GsonRequest<ProductSearchResponse>mResponseProduct4;
 
 
 
@@ -93,8 +116,15 @@ public class MainActivity extends AppCompatActivity {
         mTextViewUserNameDrawer=(CustomTextView)findViewById(R.id.textViewUserName);
         mTextViewUserNameDrawer.setText("Tamara Nikolic");
 
+        mIvSearch=(ImageView)findViewById(R.id.imageViewSearch);
+        mRlSearch=(RelativeLayout)findViewById(R.id.relativeSearc);
+        mIvDiskardSearch=(ImageView)findViewById(R.id.imageViewIks);
+        mEtSearch=(CustomEditText)findViewById(R.id.editTextSearch);
+
         mRelLayWarning=(RelativeLayout)findViewById(R.id.relativeLayoutWarning);
         mPbLoading=(RelativeLayout)findViewById(R.id.progressBarLoading);
+
+        mProgresSearch=(TextProgressBar)findViewById(R.id.searchProgress);
 
         mProductList.addAll(DataContainer.products);
         if(mProductList.size()==0){
@@ -179,6 +209,7 @@ public class MainActivity extends AppCompatActivity {
                                 mProductList.addAll(response.data.results);
                                 mPbLoading.setVisibility(View.GONE);
                                 mAdapter.notifyDataSetChanged();
+
                                 if (mProductList.size() == 0) {
                                     mRelLayWarning.setVisibility(View.VISIBLE);
                                 } else {
@@ -197,6 +228,130 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mIvSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mRlSearch.getVisibility() == View.VISIBLE) {
+                    mRlSearch.setVisibility(View.GONE);
+                    mProductList.clear();
+                    mProductList.addAll(DataContainer.products);
+                    mAdapter.notifyDataSetChanged();
+                } else {
+                    mRlSearch.setVisibility(View.VISIBLE);
+
+                }
+
+            }
+        });
+
+        myRun2=new Runnable() {
+            @Override
+            public void run() {
+
+                time=time+1;
+                mProgresSearch.setText(""+time);
+
+                myHandler2.postDelayed(myRun2, 1000);
+            }
+        };
+
+        myRun = new Runnable() {
+            public void run() {
+
+                if (letterNum >= 3) {
+
+                   mResponseProduct4= new GsonRequest<ProductSearchResponse>(Constant.PRODUCT_URL + "?token="
+                            + DataContainer.TOKEN + "&search=1&mlimit=500&start=0&term=" + mEtSearch.getText().toString(), Request.Method.GET, ProductSearchResponse.class,
+                            new Response.Listener<ProductSearchResponse>() {
+
+                                @Override
+                                public void onResponse(ProductSearchResponse response) {
+                                    mProductList.clear();
+                                    mProductList.addAll(response.data.results);
+                                    mAdapter.notifyDataSetChanged();
+
+
+                                    if (mProductList.size() == 0) {
+                                        mRelLayWarning.setVisibility(View.VISIBLE);
+                                    } else {
+                                        mRelLayWarning.setVisibility(View.GONE);
+                                    }
+
+
+                                }
+                            }, new Response.ErrorListener() {
+                        @Override
+                        public void onErrorResponse(VolleyError error) {
+
+                        }
+                    });
+                    DataLoader.addRequest(getApplicationContext(), mResponseProduct4, REQUEST_TAG);
+
+                    time=0;
+                    myHandler2.removeCallbacks(myRun2);
+                    mProgresSearch.setVisibility(View.GONE);
+                    mIvDiskardSearch.setVisibility(View.VISIBLE);
+
+                }
+
+
+            }
+        };
+
+        TextWatcher textwacher=new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+                time=0;
+                myHandler.removeCallbacks(myRun);
+                myHandler2.removeCallbacks(myRun2);
+                letterNum=charSequence.length();
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                myHandler.postDelayed(myRun, 3000);
+
+                if (letterNum >= 3) {
+                    myHandler2.postDelayed(myRun2, 1000);
+                    mProgresSearch.setVisibility(View.VISIBLE);
+                    mIvDiskardSearch.setVisibility(View.GONE);
+                }
+                else{
+                    mProgresSearch.setVisibility(View.GONE);
+                    mIvDiskardSearch.setVisibility(View.VISIBLE);
+                    mProductList.clear();
+                    mProductList.addAll(DataContainer.products);
+                    mAdapter.notifyDataSetChanged();
+
+                    myHandler2.removeCallbacks(myRun2);
+
+
+                }
+
+            }
+        };
+
+        mEtSearch.addTextChangedListener(textwacher);
+
+
+        mIvDiskardSearch.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                mRlSearch.setVisibility(View.GONE);
+                mProductList.clear();
+                mProductList.addAll(DataContainer.products);
+                mAdapter.notifyDataSetChanged();
+            }
+
+        });
+
         expListView.setOnGroupClickListener(new ExpandableListView.OnGroupClickListener() {
             @Override
             public boolean onGroupClick(ExpandableListView expandableListView, View view, int i, long l) {
@@ -210,11 +365,10 @@ public class MainActivity extends AppCompatActivity {
                 } else if (i == mCategoryList.size() - 3) {
                     mDraverLayout.closeDrawer(GravityCompat.START);
                     startActivity(new Intent(getApplicationContext(), SetttingsActivity.class));
-                }  else if (i == mCategoryList.size() - 1) {
+                } else if (i == mCategoryList.size() - 1) {
                     mDraverLayout.closeDrawer(GravityCompat.START);
 
-                }
-                else {
+                } else {
                     if (mCategoryList.get(i).subcategories.size() == 0) {
                         mDraverLayout.closeDrawer(GravityCompat.START);
                         mProductList.clear();
@@ -235,12 +389,12 @@ public class MainActivity extends AppCompatActivity {
                                         }
                                     }
                                 },
-                                 new Response.ErrorListener() {
-                            @Override
-                            public void onErrorResponse(VolleyError error) {
-                                Toast.makeText(getApplicationContext(), "greska", Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                                new Response.ErrorListener() {
+                                    @Override
+                                    public void onErrorResponse(VolleyError error) {
+                                        Toast.makeText(getApplicationContext(), "greska", Toast.LENGTH_SHORT).show();
+                                    }
+                                });
 
                         DataLoader.addRequest(getApplicationContext(), mResponseProduct2, REQUEST_TAG);
                     }
